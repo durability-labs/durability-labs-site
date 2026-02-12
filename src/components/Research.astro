@@ -1,0 +1,39 @@
+---
+import { research } from "../data/research";
+import ResearchCard from "./ResearchCard.astro";
+---
+
+<section id="research" class="py-24 md:py-32 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="max-w-2xl mb-16">
+      <p
+        class="font-body text-xs tracking-[0.2em] uppercase text-text-muted mb-4"
+      >
+        Research
+      </p>
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-6">
+        Advancing Ethereum's data availability layer
+      </h2>
+      <p class="font-body text-text-secondary leading-relaxed">
+        Our team has published extensively on data availability sampling, block
+        propagation, and mempool design. Some earlier work was published under
+        the Codex project name before the team transitioned to Durability Labs.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      {
+        research.map((paper) => (
+          <ResearchCard
+            title={paper.title}
+            date={paper.date}
+            tags={paper.tags}
+            authors={paper.authors}
+            summary={paper.summary}
+            url={paper.url}
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>

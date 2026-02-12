@@ -1,0 +1,55 @@
+---
+interface Props {
+  title: string;
+  date: string;
+  tags: string[];
+  authors: string;
+  summary: string;
+  url: string;
+}
+
+const { title, date, tags, authors, summary, url } = Astro.props;
+---
+
+<a
+  href={url}
+  target="_blank"
+  rel="noopener"
+  class="card-hover bg-surface-1 p-8 rounded-lg block group"
+>
+  <div class="flex items-center gap-3 mb-4">
+    <span class="font-body text-xs text-text-muted">{date}</span>
+    <span class="text-text-dim">&middot;</span>
+    {
+      tags.map((tag) => (
+        <span class="font-body text-xs text-text-dim bg-surface-3 px-2 py-0.5 rounded">
+          {tag}
+        </span>
+      ))
+    }
+  </div>
+  <h3
+    class="font-display text-lg font-semibold text-text-secondary group-hover:text-white transition-colors mb-2"
+  >
+    {title}
+  </h3>
+  <p class="font-body text-xs text-text-muted mb-3">{authors}</p>
+  <p class="font-body text-sm text-text-secondary leading-relaxed mb-4">
+    {summary}
+  </p>
+  <span
+    class="font-body text-xs text-text-dim group-hover:text-text-secondary transition-colors inline-flex items-center gap-1"
+  >
+    Read on ethresear.ch
+    <svg
+      width="12"
+      height="12"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+    >
+      <path d="M7 17L17 7M17 7H7M17 7v10"></path>
+    </svg>
+  </span>
+</a>

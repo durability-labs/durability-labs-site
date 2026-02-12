@@ -1,0 +1,99 @@
+---
+import Logo from "./Logo.astro";
+---
+
+<nav
+  class="fixed top-0 left-0 right-0 z-50 bg-surface-0/90 backdrop-blur-md border-b border-border-subtle"
+>
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-3 group">
+      <div
+        class="logo-mark opacity-80 group-hover:opacity-100 transition-opacity"
+      >
+        <Logo />
+      </div>
+      <span
+        class="font-display font-semibold text-white text-lg tracking-tight"
+        >Durability Labs</span
+      >
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#services" class="nav-link font-body text-sm">Services</a>
+      <a href="#about" class="nav-link font-body text-sm">About</a>
+      <a href="#team" class="nav-link font-body text-sm">Team</a>
+      <a href="#research" class="nav-link font-body text-sm">Research</a>
+      <a href="#products" class="nav-link font-body text-sm">Products</a>
+      <a
+        href="#contact"
+        class="btn-primary text-sm"
+        style="padding: 8px 20px;">Get in Touch</a
+      >
+    </div>
+    <!-- Mobile menu button -->
+    <button
+      id="menu-toggle"
+      class="md:hidden text-text-secondary hover:text-white transition-colors"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+      >
+        <line x1="4" y1="7" x2="20" y2="7"></line>
+        <line x1="4" y1="12" x2="20" y2="12"></line>
+        <line x1="4" y1="17" x2="20" y2="17"></line>
+      </svg>
+    </button>
+  </div>
+  <!-- Mobile menu -->
+  <div
+    id="mobile-menu"
+    class="mobile-menu flex-col bg-surface-1 border-b border-border-default md:hidden"
+  >
+    <a
+      href="#services"
+      class="px-6 py-3 text-sm text-text-secondary hover:text-white transition-colors"
+      >Services</a
+    >
+    <a
+      href="#about"
+      class="px-6 py-3 text-sm text-text-secondary hover:text-white transition-colors"
+      >About</a
+    >
+    <a
+      href="#team"
+      class="px-6 py-3 text-sm text-text-secondary hover:text-white transition-colors"
+      >Team</a
+    >
+    <a
+      href="#research"
+      class="px-6 py-3 text-sm text-text-secondary hover:text-white transition-colors"
+      >Research</a
+    >
+    <a
+      href="#products"
+      class="px-6 py-3 text-sm text-text-secondary hover:text-white transition-colors"
+      >Products</a
+    >
+    <a
+      href="#contact"
+      class="px-6 py-3 text-sm text-white font-medium">Get in Touch</a
+    >
+  </div>
+</nav>
+
+<script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+  menuToggle?.addEventListener("click", () => {
+    mobileMenu?.classList.toggle("active");
+  });
+  mobileMenu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu?.classList.remove("active");
+    });
+  });
+</script>

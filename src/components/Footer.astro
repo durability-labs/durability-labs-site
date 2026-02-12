@@ -1,0 +1,41 @@
+---
+import Logo from "./Logo.astro";
+---
+
+<footer class="border-t border-border-subtle py-8 px-6">
+  <div
+    class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4"
+  >
+    <div class="flex items-center gap-3">
+      <div class="logo-mark opacity-50" style="width:20px; height:20px;">
+        <Logo class="w-5 h-5" />
+      </div>
+      <span class="font-body text-xs text-text-dim"
+        >&copy; 2026 Durability Labs. All rights reserved.</span
+      >
+    </div>
+    <div class="flex items-center gap-6">
+      <a
+        href="https://archivist.storage"
+        target="_blank"
+        rel="noopener"
+        class="font-body text-xs text-text-dim hover:text-text-secondary transition-colors"
+        >Archivist</a
+      >
+      <a
+        href="https://docs.archivist.storage"
+        target="_blank"
+        rel="noopener"
+        class="font-body text-xs text-text-dim hover:text-text-secondary transition-colors"
+        >Docs</a
+      >
+      <a
+        href="https://github.com/durability-labs"
+        target="_blank"
+        rel="noopener"
+        class="font-body text-xs text-text-dim hover:text-text-secondary transition-colors"
+        >GitHub</a
+      >
+    </div>
+  </div>
+</footer>
