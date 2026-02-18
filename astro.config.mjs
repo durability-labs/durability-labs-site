@@ -3,8 +3,7 @@ import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: "https://durability-labs.github.io",
-  base: "/durability-labs-site",
+  site: "https://durability.dev",
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],
